@@ -1,9 +1,6 @@
 
 <?php
 
-block() ;
-
-
 $url = $_POST['URL'] ;
 $code = "" ;
 $pic = "Error : Can't find this post";
@@ -53,53 +50,5 @@ if (strlen($pic[0]) >= 3){
     }else{
         $data['pic'] = "";
 }
-
-add($result[0] , $pic[0]);
-
      echo json_encode($data) ;
-
-
-
-function block(){
-  $min_seconds_between_refreshes = 5;
-
-session_start();
-
-if(array_key_exists('last_access', $_SESSION) && time()-$min_seconds_between_refreshes <= $_SESSION['last_access']) {
-  // The user has been here at least $min_seconds_between_refreshes seconds ago - block them
-   $data['result'] = "You are going too quickly, please wait a few seconds and try again.";
-     $data['pic'] = "";
-  exit(json_encode($data));
-}
-// Record now as their last access time
-$_SESSION['last_access'] = time();
-}
-
-
-function add($p,$t){
-     include('config.php');
-
-
-
-
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-} 
-
-$sql = "INSERT INTO IGAI (pic,txt)
-VALUES ('$p', '$t')";
-
-if ($db->query($sql) === TRUE) {
-     
-} else {
-
-    
-}
-
-$db->close();
-
-} 
-
-
-
 ?>
