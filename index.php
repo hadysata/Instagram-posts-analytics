@@ -7,7 +7,8 @@
   <title>IG AI</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="style.css">
-  
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
   
 </head>
 
@@ -47,14 +48,6 @@
    
 </div>
 
-
-
-  
-  
-  
-  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-
 <script>
 
 $(document).ready(function(){
@@ -75,9 +68,6 @@ $(document).ready(function(){
         });
     });
 });
-
-
-
 
 </script>
 
